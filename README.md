@@ -8,12 +8,12 @@ on a free to use code and tutorial, so if there are any incorrect use of terms, 
 hard to understand explanations, please send your feedback so I can update these files! 
 Here we go!
 
-# 1 - GETTING THE CODE TO WORK
+# 1 - Getting the code to work
 This part is easy: Have Python 3.* installed on your machine (don't know if there any problems on having only 2.* installed,
 so better go for both for maximum compatibility XD). Normally it already has the Tkinter library with it, but in case
 it doesn't, download it through Pip (you can find more information through other tutorials). 
 
-# 2 - HOW IT WORKS 
+# 2 - How it works 
 After several search for answers on some points to better use of the Tkinter 
 library through the college project, I found some pieces of code from other users of
 StackOverflow to optimize some parts like: creating a UNIQUE screen without creating 
@@ -27,25 +27,26 @@ so a big thanks to these guys!
 The code uses 3 main global variables for fast creation and destruction of Tkinter's Widgets
 on the screen (root, Frame and Canvas), making their creation faster and more intuitive (I hope \[T]/).
 
-- This part:
+This part:
 
-global root     
-root = tk.Tk()
-startScreen(root)
+    global root     
+    root = tk.Tk()
+    startScreen(root)
 
-- Makes ROOT be a global variable for further use, makes it the main screen for Tkinter to work,
+Makes ROOT be a global variable for further use, makes it the main screen for Tkinter to work,
 and gets called by the function startScreen so it can be initialized. From here, the magic starts:
 
-def startScreen(root):
-    global canvas
-    canvas = tk.Canvas(root, height=HEIGHT, width=WIDTH)
-    canvas.pack()
+    def startScreen(root):
 
-    global frame
-    frame = tk.Frame(root, bg="gray", bd=10)
-    frame.place(relheight=1, relwidth=1)
+        global canvas
+        canvas = tk.Canvas(root, height=HEIGHT, width=WIDTH)
+        canvas.pack()
 
-    root.mainloop()
+        global frame
+        frame = tk.Frame(root, bg="gray", bd=10)
+        frame.place(relheight=1, relwidth=1)
+
+        root.mainloop()
 
 - ROOT is now working as TK, and the Frame and Canvas are now set. The Canvas is useful for the 
 desired size of the screen, by using HEIGHT and WIDTH as its parameters (they are a CONSTANT 
@@ -60,7 +61,7 @@ screen without the need for Toplevels, and thus a single screen is being used (R
 for example, you can use the function Clear(frame, _userFunction_) as the Button Command 
 to clear the actual screen of its widgets and create new ones inside the _userFunction_ call. Ex:
 
-button = tk.Button(frame, command=lambda: clear(frame, _newScreen_))
+    button = tk.Button(frame, command=lambda: clear(frame, _newScreen_))
                                     ^ The lambda makes sure its command happens only when you press it.
 
 - You can create widgets on the startScreen already, just use Frame for them, and clear them out with
@@ -69,9 +70,9 @@ Clear funtion after an event.
 This makes it for the basics, when you open the code, more explaining is done with an interactive example, just run the code on
 your editor of preference.
 
-# 3 - ADJUSTMENTS AND OPTIMIZATIONS
+# 3 - Adjustments and Optimizations
 I made the code based on a college project, and took me about 1 week to finish it; I'm not that
-expert on Python programming, so if you think that you make it better and adapt it to your needs, 
+expert on Python programming, so if you want to make it better and adapt it to your needs, 
 go for it! And if possible, tell me how you did it, so I can update the project itself! XD
 
 Based on this, you're free to use your imagination to use this code, from a college project like mine,
