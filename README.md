@@ -54,7 +54,7 @@ of your choice), and using ROOT as its main screen. The loop is set on the end, 
 
 - From now on, the widgets that you will create will use FRAME as its substitute for ROOT; Instead of
 creating widgets on ROOT, the Frame allows the use of widget.destroy() command, making the use of 
-the function Clear to delete widgets on Frame whenever you want to create a "new"
+the function Clear that is inside the code to delete widgets on Frame whenever you want to create a "new"
 screen without the need for Toplevels, and thus a single screen is being used (ROOT), but being rewritten in Frame. 
 
 - Each "new" screen can be created inside funtions, so if you use a button to go to a "new" screen,
